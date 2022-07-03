@@ -15,28 +15,32 @@ Max = 100
 c = b - a
 
 x0 = (a + b) / 2.0
-antB = 0
-antA = 0
+antA = x0
+antB = x0
+conte = 0
 
 while(c > l or math.fabs(f(x0)) > tol):
 
     if(f(a) * f(x0) < 0.0):
         b = x0
-        erro = antB - b
+        erro = antB - x0
         antB = b
         print("b: %f" % b)
+        print("erro: %f" % erro)
 
     if(f(a) * f(x0) > 0.0):
         a = x0
         erro = antA - a
         antA = a
         print("a: %f" % a)
+        print("erro: %f" % erro)
 
 
     c = b - a
-    x0 = (a + b) / 2.0
+    print("f(%f): %f" % (x0, f(x0)))
     print("Xn: %f" % x0)
-    print("f(x): %f" % c)
+    x0 = (a + b) / 2.0
+
 
     conte = conte + 1
     print("d: %d\n\n" % conte)
@@ -47,3 +51,5 @@ while(c > l or math.fabs(f(x0)) > tol):
 print("\n\n\nRaiz: %f\n" % x0)
 print("Interações %i\n" % conte)
 print("f(%f) = %f" % (x0, f(x0)))
+
+
